@@ -1,12 +1,22 @@
-import React from "react";
+import React, { useState } from "react";
 import Today from "./Today";
 import Form from "./Form";
 import Forecast from "./Forecast";
 import Extras from "./Extras";
+import axios from "axios";
 
 import "./App.css";
 
 export default function App() {
+  let [temperature, setTemperature] = useState("");
+  let [city, setCity] = useState("");
+  function showTemperature(response) {
+    setTemperature(Math.round(response.data.main.temp));
+  }
+  let ApiKey = `3e7933c2bb3dd10c446953d265fdc0d8`;
+  let ApiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${ApiKey}&units=metric`;
+
+  axios.get(ApiUrl).then(showTemperature);
   return (
     <div className="App">
       <div className="container">
@@ -17,7 +27,7 @@ export default function App() {
 
               <h2>
                 <strong id="mainTemperature" className="mainTemp">
-                  27
+                  {temperature}
                 </strong>
                 <sup>
                   <a href="/" id="celsius" className="active">
