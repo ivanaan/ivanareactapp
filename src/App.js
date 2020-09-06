@@ -1,4 +1,5 @@
 import React from "react";
+import Today from "./Today";
 
 import Hello from "./Hello";
 import "./App.css";
@@ -27,6 +28,7 @@ export default function App() {
                 </sup>
               </h2>
             </div>
+            <Today />
           </div>
         </div>
       </div>
