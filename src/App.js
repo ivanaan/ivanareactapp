@@ -1,7 +1,7 @@
 import React from "react";
 import Today from "./Today";
+import Form from "./Form";
 
-import Hello from "./Hello";
 import "./App.css";
 
 export default function App() {
@@ -30,6 +30,7 @@ export default function App() {
             </div>
             <Today />
           </div>
+          <Form />
         </div>
       </div>
     </div>

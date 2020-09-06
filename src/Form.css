@@ -1,0 +1,16 @@
+#city-input {
+  background-color: transparent;
+  box-shadow: 3px 3px 5px;
+}
+.weather-form form {
+  text-align: center;
+  margin: 15px;
+}
+.btn-dark {
+  margin-right: 5px;
+  margin-bottom: 15px;
+}
+.btn-light {
+  background-color: #d1dbe0;
+  margin-bottom: 15px;
+}
