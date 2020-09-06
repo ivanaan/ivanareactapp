@@ -14,7 +14,6 @@ export default function App() {
   let [maxTemp, setMaxTemp] = useState("");
   let [humidity, setHumidity] = useState("");
   let [wind, setWind] = useState("");
-  let [forecast, setForecast] = useState("");
   let Now = new Date();
   function FormatDate(timestamp) {
     let days = [
