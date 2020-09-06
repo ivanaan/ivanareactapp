@@ -1,6 +1,7 @@
 import React from "react";
 import Today from "./Today";
 import Form from "./Form";
+import Forecast from "./Forecast";
 
 import "./App.css";
 
@@ -31,6 +32,12 @@ export default function App() {
             <Today />
           </div>
           <Form />
+          <div className="row" id="forecastSetup">
+            <Forecast time="12:00" tempMax={30} tempMin={25} />
+            <Forecast time="16:00" tempMax={26} tempMin={22} />
+            <Forecast time="20:00" tempMax={23} tempMin={21} />
+            <Forecast time="00:00" tempMax={20} tempMin={22} />
+          </div>
         </div>
       </div>
     </div>
