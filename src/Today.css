@@ -1,7 +1,12 @@
+#city-info {
+  text-align: center;
+}
+
 h3 .city-list {
   list-style: none;
   margin-bottom: 5px;
   margin-top: 10px;
+  margin-right: 30px;
 }
 
 li {

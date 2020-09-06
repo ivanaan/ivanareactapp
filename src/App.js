@@ -8,11 +8,57 @@ import axios from "axios";
 
 export default function App() {
   let [temperature, setTemperature] = useState("");
-  let [city, setCity] = useState("");
+  let [city, setCity] = useState("Prilep");
   let [minTemp, setMinTemp] = useState("");
   let [maxTemp, setMaxTemp] = useState("");
   let [humidity, setHumidity] = useState("");
   let [wind, setWind] = useState("");
+  let [forecast, setForecast] = useState("");
+  let Now = new Date();
+  function FormatDate(timestamp) {
+    let days = [
+      "Sunday",
+      "Monday",
+      "Tuesday",
+      "Wednesday",
+      "Thursday",
+      "Friday",
+      "Saturday",
+    ];
+    let Today = Now.getDate();
+    if (Today < 10) {
+      Today = `0${Today}`;
+    }
+    let Day = days[Now.getDay()];
+
+    let Months = [
+      "Jan",
+      "Feb",
+      "Mar",
+      "Apr",
+      "May",
+      "Jun",
+      "Jul",
+      "Aug",
+      "Sep",
+      "Oct",
+      "Nov",
+      "Dec",
+    ];
+    let Month = Months[Now.getMonth()];
+    return `${Today} ${Month}, ${Day} ${FormatTime(timestamp)}`;
+  }
+  function FormatTime(timestamp) {
+    let Hours = Now.getHours();
+    let Min = Now.getMinutes();
+    if (Hours < 10) {
+      Hours = `0${Hours}`;
+    }
+    if (Min < 10) {
+      Min = `0${Min}`;
+    }
+    return `${Hours}:${Min}`;
+  }
 
   function showTemperature(response) {
     setTemperature(Math.round(response.data.main.temp));
@@ -21,8 +67,11 @@ export default function App() {
     setHumidity(Math.round(response.data.main.humidity));
     setWind(Math.round(response.data.wind.speed));
   }
-
-  function showForecast(response) {}
+  function showForecast(response) {
+    for (let index = 0; index < 4; index++) {
+      forecast = response.data.list[index];
+    }
+  }
   function handleForm(event) {
     event.preventDefault();
     let ApiKey = `3e7933c2bb3dd10c446953d265fdc0d8`;
@@ -30,9 +79,10 @@ export default function App() {
 
     axios.get(ApiUrl).then(showTemperature);
 
-    ApiUrl = `https://api.openweathermap.org/data/2.5/forecast?q=${city}&appid=${ApiKey}&units=metric`;
-    axios.get(ApiUrl).then(showForecast);
+    let apiUrl = `https://api.openweathermap.org/data/2.5/forecast?q=${city}&appid=${ApiKey}&units=metric`;
+    axios.get(apiUrl).then(showForecast);
   }
+
   function showCity(event) {
     event.preventDefault();
     setCity(event.target.value);
@@ -69,7 +119,7 @@ export default function App() {
                     <br />
                   </li>
                   <li>
-                    <small id="today-date">24 Oct, Fri 01:15</small>
+                    <small id="today-date"> {FormatDate()}</small>
                   </li>
                   <br />
                   <li>
@@ -108,7 +158,8 @@ export default function App() {
           <div className="row" id="forecastSetup">
             <div className="Forecast">
               <div className="col">
-                <span id="time-one"></span> <br />
+                <span id="time-one"></span>
+                {FormatTime(forecast.dt)} <br />
                 <img
                   src="http://openweathermap.org/img/wn/10d@2x.png"
                   width="52"
@@ -116,8 +167,8 @@ export default function App() {
                   id="img-one"
                 />
                 <br />
-                <span id="temp-max1"></span>°/
-                <span id="temp-min1"></span>°
+                <span id="temp-max1"></span>20°/
+                <span id="temp-min1"></span>19°
               </div>
             </div>
           </div>
