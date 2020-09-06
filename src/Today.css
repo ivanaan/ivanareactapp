@@ -1,0 +1,21 @@
+h3 .city-list {
+  list-style: none;
+  margin-bottom: 5px;
+  margin-top: 10px;
+}
+
+li {
+  padding: 0;
+}
+li:first-letter {
+  text-transform: capitalize;
+}
+#today-date {
+  font-size: 18px;
+}
+#description {
+  font-size: 25px;
+  color: #e2e6ea;
+  font-weight: 900;
+  text-shadow: 1px 1px #48484a;
+}
