@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import Forecast from "./Forecast";
 import "./Today.css";
 import "./Form.css";
 import "./Forecast.css";
@@ -7,7 +8,7 @@ import "./App.css";
 import axios from "axios";
 
 export default function App() {
-  let [temperature, setTemperature] = useState("");
+  let [temperature, setTemperature] = useState("20");
   let [city, setCity] = useState("Prilep");
   let [minTemp, setMinTemp] = useState("");
   let [maxTemp, setMaxTemp] = useState("");
@@ -67,20 +68,13 @@ export default function App() {
     setHumidity(Math.round(response.data.main.humidity));
     setWind(Math.round(response.data.wind.speed));
   }
-  function showForecast(response) {
-    for (let index = 0; index < 4; index++) {
-      forecast = response.data.list[index];
-    }
-  }
+
   function handleForm(event) {
     event.preventDefault();
     let ApiKey = `3e7933c2bb3dd10c446953d265fdc0d8`;
     let ApiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${ApiKey}&units=metric`;
 
     axios.get(ApiUrl).then(showTemperature);
-
-    let apiUrl = `https://api.openweathermap.org/data/2.5/forecast?q=${city}&appid=${ApiKey}&units=metric`;
-    axios.get(apiUrl).then(showForecast);
   }
 
   function showCity(event) {
@@ -156,21 +150,11 @@ export default function App() {
           </div>
 
           <div className="row" id="forecastSetup">
-            <div className="Forecast">
-              <div className="col">
-                <span id="time-one"></span>
-                {FormatTime(forecast.dt)} <br />
-                <img
-                  src="http://openweathermap.org/img/wn/10d@2x.png"
-                  width="52"
-                  alt="time-one"
-                  id="img-one"
-                />
-                <br />
-                <span id="temp-max1"></span>20°/
-                <span id="temp-min1"></span>19°
-              </div>
-            </div>
+            <Forecast />
+            <Forecast />
+            <Forecast />
+            <Forecast />
+            <Forecast />
           </div>
           <div className="Extras">
             <div className="row">
