@@ -1,57 +1,47 @@
-import React, { useState } from "react";
-import axios from "axios";
+import React from "react";
 import "./Today.css";
-export default function Today() {
-  let [temperature, setTemperature] = useState("");
-  function showTemperature(response) {
-    setTemperature(response.data.main.temp);
+export default function Today(props) {
+  let days = [
+    "Sunday",
+    "Monday",
+    "Tuesday",
+    "Wednesday",
+    "Thursday",
+    "Friday",
+    "Saturday",
+  ];
+  let Today = props.date.getDate();
+  if (Today < 10) {
+    Today = `0${Today}`;
   }
-  let ApiKey = `3e7933c2bb3dd10c446953d265fdc0d8`;
-  let ApiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${ApiKey}&units=metric`;
+  let Day = days[props.date.getDay()];
 
-  axios.get(ApiUrl).then(showTemperature);
+  let Months = [
+    "Jan",
+    "Feb",
+    "Mar",
+    "Apr",
+    "May",
+    "Jun",
+    "Jul",
+    "Aug",
+    "Sep",
+    "Oct",
+    "Nov",
+    "Dec",
+  ];
+  let Month = Months[props.date.getMonth()];
+  let Hours = props.date.getHours();
+  let Min = props.date.getMinutes();
+  if (Hours < 10) {
+    Hours = `0${Hours}`;
+  }
+  if (Min < 10) {
+    Min = `0${Min}`;
+  }
   return (
-    <div className="container">
-      <div className="wrapcode">
-        <div className="row">
-          <div className="col">
-            <img src="http://openweathermap.org/img/wn/02d@2x.png" alt="" />
-
-            <h2>
-              <strong id="mainTemperature" className="mainTemp">
-                {temperature}
-              </strong>
-              <sup>
-                <a href="/" id="celsius" className="active">
-                  °C
-                </a>{" "}
-                |
-                <a href="/" id="fahrenheit">
-                  °F
-                </a>
-              </sup>
-            </h2>
-          </div>
-          <Today />
-        </div>
-        <div className="col" id="city-info">
-          <h3>
-            <ul className="city-list">
-              <li>
-                <span id="city">Prilep</span>
-                <br />
-              </li>
-              <li>
-                <small id="today-date">24 Oct, Fri 01:15</small>
-              </li>
-              <br />
-              <li>
-                <span id="description">Clear sky</span>
-              </li>
-            </ul>
-          </h3>
-        </div>
-      </div>
+    <div>
+      {Today} {Month}, {Day}, {Hours}:{Min}
     </div>
   );
 }
