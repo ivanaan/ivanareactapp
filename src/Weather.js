@@ -20,6 +20,7 @@ export default function Weather(props) {
             </a>{" "}
             |
             <a href="/" id="fahrenheit">
+              {" "}
               °F
             </a>
           </sup>
