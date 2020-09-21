@@ -5,7 +5,10 @@ export default function Weather(props) {
   return (
     <div className="row">
       <div className="col-6">
-        <img src="http://openweathermap.org/img/wn/02d@2x.png" alt="" />
+        <img
+          src={`http://openweathermap.org/img/wn/${props.data.icon}@2x.png`}
+          alt=""
+        />
 
         <h2>
           <strong id="mainTemperature" className="mainTemp">
