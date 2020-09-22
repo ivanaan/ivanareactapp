@@ -1,5 +1,6 @@
 import React from "react";
 import Today from "./Today.js";
+import Temperature from "./Temperature.js";
 
 export default function Weather(props) {
   return (
@@ -11,19 +12,7 @@ export default function Weather(props) {
         />
 
         <h2>
-          <strong id="mainTemperature" className="mainTemp">
-            {props.data.temperature}
-          </strong>
-          <sup>
-            <a href="/" id="celsius" className="active">
-              °C
-            </a>{" "}
-            |
-            <a href="/" id="fahrenheit">
-              {" "}
-              °F
-            </a>
-          </sup>
+          <Temperature celsius={props.data.temperature} />
         </h2>
       </div>
 

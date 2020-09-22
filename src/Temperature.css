@@ -1,0 +1,19 @@
+h2 .mainTemp {
+  color: #23272b;
+}
+.row {
+  text-align: center;
+}
+h2 #celsius {
+  border: none;
+}
+h2 #fahrenheit {
+  border: none;
+}
+a.active {
+  color: #343a40;
+  cursor: default;
+}
+a.active:hover {
+  text-decoration: none;
+}

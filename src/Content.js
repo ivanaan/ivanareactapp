@@ -5,7 +5,7 @@ import axios from "axios";
 import "./Form.css";
 import "./Forecast.css";
 import "./Extras.css";
-import "./App.css";
+import "./Content.css";
 export default function Content(props) {
   const [weatherData, setWeatherData] = useState({ ready: false });
   const [city, setCity] = useState(props.defaultCity);
