@@ -1,9 +1,9 @@
 import React, { useState } from "react";
 import Forecast from "./Forecast";
 import Weather from "./Weather";
+import Extras from "./Extras.js";
 import axios from "axios";
 import "./Form.css";
-import "./Forecast.css";
 import "./Extras.css";
 import "./Content.css";
 export default function Content(props) {
@@ -62,37 +62,14 @@ export default function Content(props) {
             />
           </form>
         </div>
-
         <div className="row" id="forecastSetup">
-          <Forecast />
+          <Forecast city={weatherData.city} />
           <Forecast />
           <Forecast />
           <Forecast />
           <Forecast />
         </div>
-        <div className="Extras">
-          <div className="row">
-            <div className="col">
-              <ul className="extras">
-                <li>
-                  Max/Min: <span id="maxTemp">{weatherData.maxTemp}</span>/
-                  <span id="minTemp">{weatherData.minTemp}</span>°
-                </li>
-                <li>
-                  Humidity: <span id="humidity">{weatherData.humidity}</span>%
-                </li>
-                <li>
-                  Wind: <span id="wind">{weatherData.wind}</span> km/h
-                </li>
-              </ul>
-            </div>
-
-            <div className="col">
-              <p id="suggestion">Make it in React-VS</p>
-              👀
-            </div>
-          </div>
-        </div>
+        <Extras info={weatherData} />
       </div>
     );
   } else {

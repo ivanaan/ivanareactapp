@@ -1,22 +1,17 @@
 import React from "react";
 import "./Extras.css";
 
-export default function Extras() {
+export default function Extras(props) {
   return (
     <div className="Extras">
       <div className="row">
         <div className="col">
           <ul className="extras">
             <li>
-              Max/Min: <span id="maxTemp">28</span>/<span id="minTemp">23</span>
-              °
+              Max/Min: {props.info.maxTemp}/{props.info.minTemp}°
             </li>
-            <li>
-              Humidity: <span id="humidity">56</span>%
-            </li>
-            <li>
-              Wind: <span id="wind">7</span> km/h
-            </li>
+            <li>Humidity: {props.info.humidity} %</li>
+            <li>Wind: {props.info.wind} km/h</li>
           </ul>
         </div>
 

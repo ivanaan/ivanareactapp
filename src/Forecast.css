@@ -1,6 +1,11 @@
 .Forecast {
+  text-align: center;
   display: block;
   margin: 0 auto;
   padding: 0;
   margin-bottom: 15px;
+}
+.Forecast img {
+  display: block;
+  margin: 0 auto;
 }
