@@ -6,7 +6,7 @@ import "./Weather.css";
 export default function Weather(props) {
   return (
     <div className="row">
-      <div className="col-6">
+      <div className="col-6" id="mainTemp">
         <img
           src={`http://openweathermap.org/img/wn/${props.data.icon}@2x.png`}
           alt=""

@@ -1,7 +1,9 @@
+#mainTemp {
+  margin: auto;
+}
 #city-info {
   text-align: center;
 }
-
 h3 .city-list {
   list-style: none;
   margin-bottom: 5px;
@@ -13,9 +15,6 @@ h3 .city-list {
 }
 li:first-letter {
   text-transform: capitalize;
-}
-#today-date {
-  font-size: 18px;
 }
 #description {
   font-size: 25px;

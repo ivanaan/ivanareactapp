@@ -3,12 +3,10 @@ import Forecast from "./Forecast";
 import Weather from "./Weather";
 import Extras from "./Extras.js";
 import axios from "axios";
-import "./Form.css";
 import "./Content.css";
 export default function Content(props) {
   const [weatherData, setWeatherData] = useState({ ready: false });
   const [city, setCity] = useState(props.defaultCity);
-  const [location, setLocation] = useState(null);
   function showTemperature(response) {
     setWeatherData({
       ready: true,
