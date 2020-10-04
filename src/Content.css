@@ -10,3 +10,21 @@
   border-radius: 5px;
   box-shadow: 5px 6px 14px;
 }
+.weather-form form {
+  text-align: center;
+  margin: 15px;
+}
+.weather-form form #city-input {
+  background-color: transparent;
+  box-shadow: 3px 3px 5px;
+  border: none;
+}
+.btn-dark {
+  margin-right: 5px;
+  margin-bottom: 15px;
+}
+.btn-light {
+  background-color: #d1dbe0;
+  margin-bottom: 15px;
+  border: none;
+}
