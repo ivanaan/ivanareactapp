@@ -29,6 +29,16 @@ export default function Content(props) {
     let ApiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${ApiKey}&units=metric`;
     axios.get(ApiUrl).then(showTemperature);
   }
+  function getCurrentLocationTemp(position) {
+    let lat = position.coords.latitude;
+    let lon = position.coords.longitude;
+    let apiKey = "bc621a3a3a6238705b7e128b25c68a1a";
+    let apiUrl = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=${apiKey}&units=metric`;
+    axios.get(apiUrl).then(showTemperature);
+  }
+  function getCurrentLocation() {
+    navigator.geolocation.getCurrentPosition(getCurrentLocationTemp);
+  }
 
   function handleForm(event) {
     event.preventDefault();
@@ -58,6 +68,7 @@ export default function Content(props) {
               type="button"
               value="Current location"
               className="btn btn-light"
+              onClick={getCurrentLocation}
             />
           </form>
         </div>
