@@ -4,7 +4,6 @@ import Weather from "./Weather";
 import Extras from "./Extras.js";
 import axios from "axios";
 import "./Form.css";
-import "./Extras.css";
 import "./Content.css";
 export default function Content(props) {
   const [weatherData, setWeatherData] = useState({ ready: false });
@@ -64,10 +63,6 @@ export default function Content(props) {
         </div>
         <div className="row" id="forecastSetup">
           <Forecast city={weatherData.city} />
-          <Forecast />
-          <Forecast />
-          <Forecast />
-          <Forecast />
         </div>
         <Extras info={weatherData} />
       </div>

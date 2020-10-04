@@ -1,6 +1,6 @@
 import React, { useState } from "react";
-import Content from "./Content.js";
 import axios from "axios";
+import ForecastDays from "./ForecastDays.js";
 import "./Forecast.css";
 
 export default function Forecast(props) {
@@ -13,18 +13,10 @@ export default function Forecast(props) {
   }
   if (loaded && props.city === forecast.city.name) {
     return (
-      <div className="Forecast row">
-        <div className="col">
-          {new Date(forecast.list[0].dt * 1000).getHours()}:00
-          <img
-            src={`http://openweathermap.org/img/wn/${forecast.list[0].weather[0].icon}@2x.png`}
-            width="64"
-            alt=""
-          />
-          {Math.round(forecast.list[0].main.temp_max)}
-          °/
-          {Math.round(forecast.list[0].main.temp_min)}°
-        </div>
+      <div className="ForecastSetup row">
+        {forecast.list.slice(0, 5).map(function (forecastItem) {
+          return <ForecastDays data={forecastItem} />;
+        })}
       </div>
     );
   } else {

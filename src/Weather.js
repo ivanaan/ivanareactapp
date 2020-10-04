@@ -1,6 +1,7 @@
 import React from "react";
 import Today from "./Today.js";
 import Temperature from "./Temperature.js";
+import "./Weather.css";
 
 export default function Weather(props) {
   return (
@@ -10,7 +11,6 @@ export default function Weather(props) {
           src={`http://openweathermap.org/img/wn/${props.data.icon}@2x.png`}
           alt=""
         />
-
         <h2>
           <Temperature celsius={props.data.temperature} />
         </h2>
@@ -19,8 +19,8 @@ export default function Weather(props) {
       <div className="col-6" id="city-info">
         <h3>
           <ul className="city-list">
-            <li>
-              <span id="city">{props.data.city}</span>
+            <li className="city">
+              {props.data.city}
               <br />
             </li>
             <li>
@@ -29,10 +29,8 @@ export default function Weather(props) {
                 <Today date={props.data.date} />
               </small>
             </li>
-            <br />
-            <li>
-              <span id="description">{props.data.description}</span>
-            </li>
+
+            <li id="description">{props.data.description}</li>
           </ul>
         </h3>
       </div>

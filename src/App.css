@@ -4,13 +4,6 @@
     Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
 }
 
-.row {
-  text-align: center;
-}
-#forecastSetup {
-  border-radius: 4px;
-  box-shadow: 3px 3px 5px;
-}
 h1 {
   margin-bottom: 8px;
   padding: 0;

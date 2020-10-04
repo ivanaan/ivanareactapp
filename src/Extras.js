@@ -6,7 +6,7 @@ export default function Extras(props) {
     <div className="Extras">
       <div className="row">
         <div className="col">
-          <ul className="extras">
+          <ul>
             <li>
               Max/Min: {props.info.maxTemp}/{props.info.minTemp}°
             </li>
