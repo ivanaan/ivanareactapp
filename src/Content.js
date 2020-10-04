@@ -8,7 +8,7 @@ import "./Content.css";
 export default function Content(props) {
   const [weatherData, setWeatherData] = useState({ ready: false });
   const [city, setCity] = useState(props.defaultCity);
-
+  const [location, setLocation] = useState(null);
   function showTemperature(response) {
     setWeatherData({
       ready: true,
@@ -29,6 +29,7 @@ export default function Content(props) {
     let ApiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${ApiKey}&units=metric`;
     axios.get(ApiUrl).then(showTemperature);
   }
+
   function handleForm(event) {
     event.preventDefault();
     search();
@@ -57,11 +58,10 @@ export default function Content(props) {
               type="button"
               value="Current location"
               className="btn btn-light"
-              id="button"
             />
           </form>
         </div>
-        <div className="row" id="forecastSetup">
+        <div className="row">
           <Forecast city={weatherData.city} />
         </div>
         <Extras info={weatherData} />
