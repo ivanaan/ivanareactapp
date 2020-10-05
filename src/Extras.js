@@ -14,10 +14,8 @@ export default function Extras(props) {
             <li>Wind: {props.info.wind} km/h</li>
           </ul>
         </div>
-
         <div className="col">
-          <p id="suggestion">Make it in React-VS</p>
-          👀
+          <p id="suggestion">Make it in React</p>👀
         </div>
       </div>
     </div>
