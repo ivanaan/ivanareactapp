@@ -1,8 +1,8 @@
 .Extras {
-  margin: 10px;
   font-size: 13px;
 }
 .Extras ul {
+  margin: 11px;
   padding: 0;
   list-style: none;
   text-align: left;
@@ -15,7 +15,6 @@
   margin: 11px;
   margin-bottom: 0;
   padding: 0;
-  font-style: italic;
-  font-size: 15px;
+  font-size: 14.5px;
   color: #ec6e4c;
 }
