@@ -1,3 +1,5 @@
 #today-date {
   font-size: 18px;
+  position: static;
+  margin-bottom: 15px;
 }
