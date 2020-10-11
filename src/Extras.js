@@ -4,13 +4,13 @@ import "./Extras.css";
 export default function Extras(props) {
   let weekDay = props.info.date.getDay();
   let suggestion = [
+    `"The future is shaped by your dreams...so go back to sleep."`,
     `"Do not walk away...stare it in the eye, wave your arms and make loud noises...and slowly move towards Tuesday."`,
     `"With great power comes great electricity bill."`,
     `"Knowledge is knowing a tomato is a fruit; Wisdom is not putting it in a fruit salad 🍅."`,
     `"Haikus are easy. But sometimes they don’t make sense. Refrigerator."`,
     `"There’s just one legitimate synonym for Friday: Boom Shakalaka."`,
     `"Relax, it's the weekend! Just don't blink or it will be over."`,
-    `"The future is shaped by your dreams...so go back to sleep."`,
   ];
   return (
     <div className="Extras">
