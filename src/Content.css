@@ -2,7 +2,7 @@
   position: relative;
   background-image: radial-gradient(#00f2fe 0%, #4facfe 100%);
   background-size: cover;
-  max-width: 500px;
+  width: 500px;
   height: 590px;
   margin: auto;
   margin-top: 15px;
