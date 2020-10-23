@@ -10,7 +10,7 @@
   border: none;
   border-radius: 5px;
   box-shadow: 5px 6px 14px;
-  box,overflow: auto;
+  overflow: auto;
 }
 .weather-form form {
   text-align: center;
